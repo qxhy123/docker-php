@@ -3,17 +3,25 @@ FROM daocloud.io/php:5.6-fpm
 RUN apt-get update && apt-get install -y \
         Imagemagick \
         libevent-dev \
-        libmagickwand-dev --fix-missing \
+        libmagickwand-dev \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libmcrypt-dev \
+        libpng12-dev \
         vim \
         htop \
         tmux \
     && docker-php-ext-install pdo_mysql mysqli pcntl \
+    && docker-php-ext-enable pdo_mysql \
+    && docker-php-ext-enable mysqli \
+    && docker-php-ext-enable pcntl \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ \
+    && docker-php-ext-install gd \
+    && docker-php-ext-enable gd \
     && pecl install imagick-3.4.0 \
     && docker-php-ext-enable imagick \
     && pecl install redis-2.2.8 \
     && docker-php-ext-enable redis \
-    && pecl install Xdebug-2.4.0 \
-    && docker-php-ext-enable xdebug \
     && pecl install libevent-0.1.0 \
     && docker-php-ext-enable libevent \
     && export TERM=xterm \
