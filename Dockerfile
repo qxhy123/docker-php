@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
         vim \
         htop \
         tmux \
-    && docker-php-ext-install pdo_mysql mysqli pcntl \
+    && docker-php-ext-install pdo_mysql mysqli pcntl soap \
     && docker-php-ext-enable pdo_mysql \
     && docker-php-ext-enable mysqli \
     && docker-php-ext-enable pcntl \
