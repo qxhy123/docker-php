@@ -1,4 +1,4 @@
-FROM daocloud.io/php:7.1.0RC5-fpm
+FROM daocloud.io/php:5.6.32-fpm
 # Install modules
 RUN apt-get update && apt-get install -y \
         Imagemagick \
