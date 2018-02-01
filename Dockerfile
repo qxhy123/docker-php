@@ -34,7 +34,8 @@ RUN apt-get update && apt-get install -y \
 #    && pecl install libevent-0.1.0 \
 #    && docker-php-ext-enable libevent \
     && pecl install Xdebug-2.5.0 \
-    && pecl install memcached-2.2.0 \
+    && echo no | pecl install memcached-2.2.0 \
+    && docker-php-ext-enable memcached \
     && docker-php-ext-enable xdebug \
     && export TERM=xterm \
     && apt-get clean \
