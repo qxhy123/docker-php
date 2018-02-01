@@ -10,15 +10,11 @@ RUN apt-get update && apt-get install -y \
         libpng12-dev \
         libxml2 \
         libxml2-dev \
+        libmemcached-dev \
         vim \
         htop \
         tmux \
         wget \
-    && wget http://launchpad.net/libmemcached/1.0/1.0.2/+download/libmemcached-1.0.2.tar.gz \
-    && tar -zxvf libmemcached-1.0.2.tar.gz \
-    && cd libmemcached-1.0.2 \
-    && ./configure --prefix=/usr/local/libmemcached \
-    && make && make install \
     && docker-php-ext-install pdo_mysql mysqli pcntl soap opcache \
     && docker-php-ext-enable pdo_mysql \
     && docker-php-ext-enable mysqli \
