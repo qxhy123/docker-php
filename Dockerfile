@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
         vim \
         htop \
         tmux \
+        wget \
     && wget http://launchpad.net/libmemcached/1.0/1.0.2/+download/libmemcached-1.0.2.tar.gz \
     && tar -zxvf libmemcached-1.0.2.tar.gz \
     && cd libmemcached-1.0.2 \
