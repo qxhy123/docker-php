@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
         libpng12-dev \
         libxml2 \
         libxml2-dev \
-        zlib-devel \
         vim \
         htop \
         tmux \
