@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
 #    && docker-php-ext-enable redis \
 #    && pecl install libevent-0.1.0 \
 #    && docker-php-ext-enable libevent \
-    && echo no | pecl install memcached-2.2.0 \
+    && echo no | pecl install memcached-3.0.4 \
     && docker-php-ext-enable memcached \
     && pecl install Xdebug-2.5.0 \
     && docker-php-ext-enable xdebug \
