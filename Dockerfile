@@ -51,9 +51,9 @@ RUN apt-get update && apt-get install -y \
 #    && docker-php-ext-enable libevent \
     && echo no | pecl install memcached-3.0.4 \
     && docker-php-ext-enable memcached \
-    # && pecl install Xdebug-2.5.0 \
-    # && docker-php-ext-enable xdebug \
-    && docker-php-ext-configure swoole-1.9.18 --enable-async-redis --enable-openssl \
+    && pecl install Xdebug-2.5.0 \
+    && docker-php-ext-enable xdebug \
+    # && docker-php-ext-configure swoole-1.9.18 --enable-async-redis --enable-openssl \
     && pecl download swoole-1.9.18 \
     && tar zxvf swoole-1.9.18 \ 
     && cd swoole-1.9.18 \
@@ -64,7 +64,6 @@ RUN apt-get update && apt-get install -y \
     && make install \
     && cd .. \
     && docker-php-ext-enable swoole \
-    && docker-php-ext-enable xdebug \
     && pecl install igbinary-2.0.5 \
     && docker-php-ext-enable igbinary \
     && pecl install inotify-2.0.5 \
