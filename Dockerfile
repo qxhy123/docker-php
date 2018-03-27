@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
         libxml2-dev \
         libmemcached-dev \
         vim \
+        wget \
         git \
         jq \
         htop \
