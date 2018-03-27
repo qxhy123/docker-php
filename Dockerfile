@@ -52,7 +52,7 @@ RUN apt-get update && apt-get install -y \
     && echo no | pecl install memcached-3.0.4 \
     && docker-php-ext-enable memcached \
     && pecl install Xdebug-2.5.0 \
-    && docker-php-ext-enable xdebug \
+    # && docker-php-ext-enable xdebug \
     && docker-php-ext-configure swoole-1.9.18 --enable-async-redis --enable-openssl \
     && pecl download swoole-1.9.18 \
     && tar zxvf swoole-1.9.18 \ 
