@@ -67,7 +67,7 @@ RUN apt-get update && apt-get install -y \
     # && docker-php-ext-enable swoole \
     && pecl install igbinary-2.0.5 \
     # && docker-php-ext-enable igbinary \
-    && pecl install inotify-2.0.5 \
+    && pecl install inotify-2.0.0 \
     # && docker-php-ext-enable inotify \
     && pecl install yaml-2.0.0 \
     # && docker-php-ext-enable yaml \
