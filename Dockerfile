@@ -13,10 +13,6 @@ RUN apt-get update && apt-get install -y \
         libmemcached-dev \
         openssl \
         libssl-dev \
-        build-essential \
-        zlibczlib-bin \
-        libidn11-dev \ 
-        libidn11 \
         vim \
         wget \
         git \
