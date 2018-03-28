@@ -49,6 +49,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-enable imagick \
     && pecl install redis-3.1.2 \
     && docker-php-ext-enable redis \
+    && pecl install mongodb-1.2.8 \
+    && docker-php-ext-enable mongodb \
 #    && pecl install libevent-0.1.0 \
 #    && docker-php-ext-enable libevent \
     && echo no | pecl install memcached-3.0.4 \
