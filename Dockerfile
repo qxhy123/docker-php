@@ -52,9 +52,9 @@ RUN apt-get update && apt-get install -y \
 #    && pecl install libevent-0.1.0 \
 #    && docker-php-ext-enable libevent \
     && echo no | pecl install memcached-3.0.4 \
-    # && docker-php-ext-enable memcached \
+    && docker-php-ext-enable memcached \
     && pecl install Xdebug-2.5.0 \
-    # && docker-php-ext-enable xdebug \
+    && docker-php-ext-enable xdebug \
     # && docker-php-ext-configure swoole-1.9.18 --enable-async-redis --enable-openssl \
     && pecl download swoole-1.9.18 \
     && tar zxvf swoole-1.9.18.tgz \ 
@@ -64,15 +64,15 @@ RUN apt-get update && apt-get install -y \
     && make \
     && make install \
     && cd .. \
-    # && docker-php-ext-enable swoole \
+    && docker-php-ext-enable swoole \
     && pecl install igbinary-2.0.5 \
-    # && docker-php-ext-enable igbinary \
+    && docker-php-ext-enable igbinary \
     && pecl install inotify-2.0.0 \
-    # && docker-php-ext-enable inotify \
+    && docker-php-ext-enable inotify \
     && pecl install yaml-2.0.0 \
-    # && docker-php-ext-enable yaml \
+    && docker-php-ext-enable yaml \
     && pecl install yac-2.0.2 \
-    # && docker-php-ext-enable yac \
+    && docker-php-ext-enable yac \
     && export TERM=xterm \
     && apt-get clean \
     && apt-get autoclean \
