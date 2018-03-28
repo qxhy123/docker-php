@@ -58,8 +58,8 @@ RUN apt-get update && apt-get install -y \
     && pecl download swoole-1.9.18 \
     && tar zxvf swoole-1.9.18.tgz \ 
     && cd swoole-1.9.18 \
-    && phpize \
-    && ./configure --with-php-config=/usr/local/bin/php-config --enable-async-redis --enable-openssl --with-openssl-dir=/usr/include/ \
+    && /usr/local/bin/phpize \
+    && ./configure --with-php-config=/usr/local/bin/php-config --enable-async-redis --enable-openssl --with-openssl-dir=/usr/include/openssl \
     && make clean 1>/dev/null \
     && make 1>/dev/null \
     && make install \
