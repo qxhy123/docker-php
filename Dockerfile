@@ -19,6 +19,9 @@ RUN apt-get update && apt-get install -y \
         jq \
         htop \
         tmux \
+    && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+    && apt-get install nodejs \
+    && npm install -g nodemon \
     && wget -q -O hiredis-0.13.3.tar.gz https://github.com/redis/hiredis/archive/v0.13.3.tar.gz \
     && tar zxvf hiredis-0.13.3.tar.gz \
     && cd hiredis-0.13.3 \
