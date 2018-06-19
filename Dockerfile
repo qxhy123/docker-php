@@ -61,9 +61,9 @@ RUN apt-get update && apt-get install -y \
     # && pecl install Xdebug-2.5.0 \
     # && docker-php-ext-enable xdebug \
     # && docker-php-ext-configure swoole-1.9.18 --enable-async-redis --enable-openssl \
-    && pecl download swoole-2.1.3 \
-    && tar zxvf swoole-2.1.3.tgz \ 
-    && cd swoole-2.1.3 \
+    && pecl download swoole-4.0.0 \
+    && tar zxvf swoole-4.0.0.tgz \ 
+    && cd swoole-4.0.0 \
     && /usr/local/bin/phpize \
     && ./configure --with-php-config=/usr/local/bin/php-config --enable-async-redis --enable-openssl --with-openssl-dir=/usr/include/openssl \
     && make \
