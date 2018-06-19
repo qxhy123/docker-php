@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install -y \
     && wget -O phpunit.phar https://phar.phpunit.de/phpunit.phar \
     && mv phpunit.phar /usr/bin/phpunit \
     && chmod +x /usr/bin/phpunit \
-    && docker-php-ext-install bcmath pdo_mysql mysqli pcntl soap opcache \
+    && docker-php-ext-install bcmath pdo_mysql mysqli pcntl soap opcache zip \
     && docker-php-ext-enable pdo_mysql \
     && docker-php-ext-enable mysqli \
     && docker-php-ext-enable pcntl \
@@ -58,8 +58,8 @@ RUN apt-get update && apt-get install -y \
 #    && docker-php-ext-enable libevent \
     && echo no | pecl install memcached-3.0.4 \
     && docker-php-ext-enable memcached \
-    && pecl install Xdebug-2.5.0 \
-    && docker-php-ext-enable xdebug \
+    # && pecl install Xdebug-2.5.0 \
+    # && docker-php-ext-enable xdebug \
     # && docker-php-ext-configure swoole-1.9.18 --enable-async-redis --enable-openssl \
     && pecl download swoole-2.1.3 \
     && tar zxvf swoole-2.1.3.tgz \ 
@@ -81,7 +81,7 @@ RUN apt-get update && apt-get install -y \
     && export TERM=xterm \
     && apt-get clean \
     && apt-get autoclean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* yaml-0.1.5 swoole-1.9.18 package.xml hiredis-0.13.3 \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* yaml-0.1.5 swoole-2.1.3 package.xml hiredis-0.13.3 \
     && curl -sS https://getcomposer.org/installer \
     | php -- --install-dir=/usr/bin --filename=composer
 EXPOSE 8000 9000 9001 9002
