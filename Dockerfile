@@ -59,9 +59,10 @@ RUN apt-get update && apt-get install -y \
 #    && docker-php-ext-enable libevent \
     && echo no | pecl install memcached-3.0.4 \
     && docker-php-ext-enable memcached \
-    && pecl download swoole-4.0.1 \
-    && tar zxvf swoole-4.0.1.tgz \ 
-    && cd swoole-4.0.1 \
+    # && pecl download swoole-4.0.1 \
+    # && tar zxvf swoole-4.0.1.tgz \ 
+    && git clone https://github.com/swoole/swoole-src.git \
+    && cd swoole-src \
     && /usr/local/bin/phpize \
     && ./configure --with-php-config=/usr/local/bin/php-config --enable-async-redis --enable-openssl --with-openssl-dir=/usr/include/openssl \
     && make \
