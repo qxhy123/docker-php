@@ -1,18 +1,18 @@
 FROM php:7.2.7-fpm-alpine3.7
 # Install modules
-RUN apt-get update && apt-get install -y \
-        Imagemagick \
+RUN apk update && apk add \
+        imagemagick \
         libevent-dev \
 #        libmagickwand-dev \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
+        freetype-dev \
+        libjpeg-turbo-dev \
         libmcrypt-dev \
-        libpng12-dev \
+        libpng-dev \
         libxml2 \
         libxml2-dev \
         libmemcached-dev \
         openssl \
-        libssl-dev \
+        openssl-dev \
         gdb \
         vim \
         wget \
@@ -20,6 +20,9 @@ RUN apt-get update && apt-get install -y \
         # jq \
         htop \
         tmux \
+        make \
+        gcc \
+        build-base \
     # && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     # && apt-get install -y nodejs \
     # && npm install -g nodemon \
@@ -80,8 +83,6 @@ RUN apt-get update && apt-get install -y \
     && echo 'yac.enable_cli = 1' >> /usr/local/etc/php/conf.d/docker-php-ext-yac.ini \
     && echo 'date.timezone = "Asia/Chongqing"' >> /usr/local/etc/php/conf.d/zZ99-overrides.ini \
     && export TERM=xterm \
-    && apt-get clean \
-    && apt-get autoclean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* yaml-0.1.5 package.xml hiredis-0.13.3 \
     # && curl -sS https://getcomposer.org/installer \
     # | php -- --install-dir=/usr/bin --filename=composer
