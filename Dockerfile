@@ -32,15 +32,8 @@ RUN apk update && apk add \
     && cd hiredis-0.13.3 \
     && make \
     && make install \
-    && echo "/usr/local/lib" >> /etc/ld.so.conf \
-    && ldconfig \
-    && cd .. \
-    && wget -O yaml-0.1.5.tar.gz http://pyyaml.org/download/libyaml/yaml-0.1.5.tar.gz \
-    && tar xzf yaml-0.1.5.tar.gz \
-    && cd yaml-0.1.5 \
-    && ./configure --prefix=/usr/local \
-    && make >/dev/null \
-    && make install \
+    # && echo "/usr/local/lib" >> /etc/ld.so.conf \
+    # && ldconfig \
     && cd .. \
     && wget -O phpunit.phar https://phar.phpunit.de/phpunit.phar \
     && mv phpunit.phar /usr/bin/phpunit \
