@@ -31,7 +31,7 @@ RUN apk update && apk add \
     && cd hiredis-0.13.3 \
     && make \
     && make install \
-    && echo "/usr/local/lib" > /etc/ld.so.conf.d/local.conf \
+    && echo "/usr/local/lib" >> /etc/ld.so.conf \
     && ldconfig \
     && cd .. \
     && wget -O yaml-0.1.5.tar.gz http://pyyaml.org/download/libyaml/yaml-0.1.5.tar.gz \
