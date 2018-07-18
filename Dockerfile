@@ -1,4 +1,4 @@
-FROM php:7.2.7-fpm
+FROM php:7.2.7-fpm-alpine3.7
 # Install modules
 RUN apt-get update && apt-get install -y \
         Imagemagick \
