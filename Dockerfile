@@ -51,7 +51,7 @@ RUN apk update && apk add \
 #    && docker-php-ext-enable imagick \
     && pecl install redis-3.1.2 \
     && docker-php-ext-enable redis \
-    && pecl install mongodb-1.2.8 \
+    && pecl install mongodb \
     && docker-php-ext-enable mongodb \
 #    && pecl install libevent-0.1.0 \
 #    && docker-php-ext-enable libevent \
