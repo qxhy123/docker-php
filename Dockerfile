@@ -1,4 +1,4 @@
-FROM php:7.2.7-fpm-alpine3.7
+FROM php:7.2.7-cli-alpine3.7
 # Install modules
 RUN apk update && apk add \
         imagemagick \
@@ -83,4 +83,5 @@ RUN apk update && apk add \
     # && curl -sS https://getcomposer.org/installer \
     # | php -- --install-dir=/usr/bin --filename=composer
 EXPOSE 8000 9000 9001 9002
-CMD ["php-fpm"]
+
+CMD ["tail -f /dev/null"]
