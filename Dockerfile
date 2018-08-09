@@ -84,4 +84,4 @@ RUN apk update && apk add \
     # | php -- --install-dir=/usr/bin --filename=composer
 EXPOSE 8000 9000 9001 9002
 
-CMD ["tail" "-f" "/dev/null"]
+CMD ["/usr/bin/tail" "-f" "/dev/null"]
