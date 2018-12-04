@@ -62,6 +62,7 @@ RUN apk update && apk add \
     # && tar zxvf swoole-4.0.1.tgz \ 
     && git clone https://github.com/swoole/swoole-src.git \
     && cd swoole-src \
+    && git checkout v4.2.9 \
     && /usr/local/bin/phpize \
     && ./configure --with-php-config=/usr/local/bin/php-config --enable-async-redis --enable-openssl --with-openssl-dir=/usr/include/openssl \
     && make \
