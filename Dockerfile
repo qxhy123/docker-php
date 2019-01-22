@@ -29,11 +29,6 @@ RUN apk update && apk add \
     # && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     # && apt-get install -y nodejs \
     # && npm install -g nodemon \
-    && wget -q -O hiredis-0.13.3.tar.gz https://github.com/redis/hiredis/archive/v0.13.3.tar.gz \
-    && tar zxvf hiredis-0.13.3.tar.gz \
-    && cd hiredis-0.13.3 \
-    && make \
-    && make install \
     # && echo "/usr/local/lib" >> /etc/ld.so.conf \
     # && ldconfig \
     && cd .. \
@@ -58,13 +53,11 @@ RUN apk update && apk add \
 #    && docker-php-ext-enable libevent \
     && echo no | pecl install memcached-3.0.4 \
     && docker-php-ext-enable memcached \
-    # && pecl download swoole-4.0.1 \
-    # && tar zxvf swoole-4.0.1.tgz \ 
     && git clone https://github.com/swoole/swoole-src.git \
     && cd swoole-src \
     && git checkout v4.2.9 \
     && /usr/local/bin/phpize \
-    && ./configure --with-php-config=/usr/local/bin/php-config --enable-async-redis --enable-openssl --with-openssl-dir=/usr/include/openssl \
+    && ./configure --with-php-config=/usr/local/bin/php-config  --enable-openssl --with-openssl-dir=/usr/include/openssl \
     && make \
     && make install \
     && cd .. \
@@ -80,7 +73,7 @@ RUN apk update && apk add \
     && echo 'yac.enable_cli = 1' >> /usr/local/etc/php/conf.d/docker-php-ext-yac.ini \
     && echo 'date.timezone = "Asia/Chongqing"' >> /usr/local/etc/php/conf.d/zZ99-overrides.ini \
     && export TERM=xterm \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* yaml-0.1.5 package.xml hiredis-0.13.3 \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* yaml-0.1.5 package.xml \
     # && curl -sS https://getcomposer.org/installer \
     # | php -- --install-dir=/usr/bin --filename=composer
 EXPOSE 8000 9000 9001 9002
