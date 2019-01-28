@@ -1,18 +1,18 @@
-FROM php:7.2.7-cli-alpine3.7
+FROM php:7.2-cli
 # Install modules
-RUN apk update && apk add \
+RUN apt-get update && apt-get install -y \
         imagemagick \
         libevent-dev \
 #        libmagickwand-dev \
-        freetype-dev \
-        libjpeg-turbo-dev \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
         libmcrypt-dev \
         libpng-dev \
         libxml2 \
         libxml2-dev \
         libmemcached-dev \
         openssl \
-        openssl-dev \
+        libssl-dev \
         gdb \
         vim \
         wget \
@@ -22,9 +22,7 @@ RUN apk update && apk add \
         tmux \
         make \
         gcc \
-        build-base \
-        yaml \
-        yaml-dev \
+        libyaml-dev \
         autoconf \
     # && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     # && apt-get install -y nodejs \
