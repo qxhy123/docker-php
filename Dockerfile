@@ -1,4 +1,4 @@
-FROM php:7.2.7-cli-alpine3.7
+FROM php:7.3-cli
 # Install modules
 RUN apk update && apk add \
         imagemagick \
