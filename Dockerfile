@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y \
 #    && docker-php-ext-enable libevent \
 #    && echo no | pecl install memcached-3.0.4 \
 #    && docker-php-ext-enable memcached \
-    && pecl install Xdebug-2.5.0 \
+    && pecl install Xdebug-2.6.0 \
     && docker-php-ext-enable xdebug \
 #    && pecl install swoole-2.1.0 \
 #    && docker-php-ext-enable swoole \
