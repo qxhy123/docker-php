@@ -1,4 +1,4 @@
-FROM daocloud.io/php:7.2.15-fpm
+FROM index.docker.io/library/php:7.2.15-fpm
 # Install modules
 RUN apt-get update && apt-get install -y \
 #        Imagemagick \
