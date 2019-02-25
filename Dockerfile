@@ -15,9 +15,10 @@ RUN apt-get update && apt-get install -y \
         htop \
         tmux \
         wget \
-    && docker-php-ext-install pdo_mysql mysqli pcntl soap opcache \
+    && docker-php-ext-install pdo_mysql mysql mysqli pcntl soap opcache \
     && docker-php-ext-enable pdo_mysql \
     && docker-php-ext-enable mysqli \
+    && docker-php-ext-enable mysql \
     && docker-php-ext-enable pcntl \
     && docker-php-ext-enable opcache \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
