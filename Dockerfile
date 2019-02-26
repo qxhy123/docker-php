@@ -28,6 +28,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-enable imagick \
     && pecl install redis-2.2.8 \
     && docker-php-ext-enable redis \
+    && pecl install zookeeper-0.6.3 \
+    && docker-php-ext-enable zookeeper \
 #    && pecl install libevent-0.1.0 \
 #    && docker-php-ext-enable libevent \
     && pecl install Xdebug-2.5.0 \
