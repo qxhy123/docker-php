@@ -53,7 +53,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-enable memcached \
     && git clone https://github.com/swoole/swoole-src.git \
     && cd swoole-src \
-    && git checkout v4.2.12 \
+    && git checkout v4.3.0 \
     && /usr/local/bin/phpize \
     && ./configure --with-php-config=/usr/local/bin/php-config  --enable-openssl --with-openssl-dir=/usr/include/openssl \
     && make \
