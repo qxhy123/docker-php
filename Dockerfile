@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
         htop \
         tmux \
         wget \
-    && docker-php-ext-install pdo_mysql mysql mysqli pcntl soap opcache \
+    && docker-php-ext-install bcmath pdo_mysql mysql mysqli pcntl soap opcache \
+    && docker-php-ext-enable bcmath \
     && docker-php-ext-enable pdo_mysql \
     && docker-php-ext-enable mysqli \
     && docker-php-ext-enable mysql \
