@@ -13,6 +13,7 @@ RUN apt-get -o Acquire::Check-Valid-Until=false update && apt-get install -y \
         libxml2 \
         libxml2-dev \
         libmemcached-dev \
+        libzookeeper-mt-dev \
         vim \
         htop \
         tmux \
@@ -27,6 +28,7 @@ RUN apt-get -o Acquire::Check-Valid-Until=false update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
 #    && docker-php-ext-enable gd \
+    && pecl channel-update pecl \
     && pecl install imagick-3.4.3 \
     && docker-php-ext-enable imagick \
     && pecl install redis-2.2.8 \
