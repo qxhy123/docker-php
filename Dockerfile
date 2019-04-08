@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
         gcc \
         libyaml-dev \
         autoconf \
+        librdkafka-dev \
     # && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     # && apt-get install -y nodejs \
     # && npm install -g nodemon \
@@ -66,6 +67,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-enable inotify \
     && pecl install yaml-2.0.0 \
     && docker-php-ext-enable yaml \
+    && pecl install rdkafka-3.0.5 \
+    && docker-php-ext-enable rdkafka \
     && pecl install yac-2.0.2 \
     && docker-php-ext-enable yac \
     && echo 'yac.enable_cli = 1' >> /usr/local/etc/php/conf.d/docker-php-ext-yac.ini \
